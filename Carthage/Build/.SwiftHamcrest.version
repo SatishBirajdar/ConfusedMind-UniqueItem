@@ -1,0 +1,9 @@
+{
+  "commitish" : "1.0.0",
+  "iOS" : [
+    {
+      "hash" : "d91b05774eca21e071b52d453b286957937648a978bd8d7cc60b681c6bddeb5a",
+      "name" : "Hamcrest"
+    }
+  ]
+}
