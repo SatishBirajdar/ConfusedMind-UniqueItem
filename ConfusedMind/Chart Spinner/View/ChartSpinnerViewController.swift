@@ -56,7 +56,7 @@ class ChartSpinnerViewController: UIViewController, ChartViewDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//        itemsView.noDataText = "No data"
+        //        itemsView.noDataText = "No data"
         items = managedContext.fetchOptions()
         contextToObject(items)
         showChartViewWithOptions(optionsCount: items.count)
@@ -123,18 +123,18 @@ class ChartSpinnerViewController: UIViewController, ChartViewDelegate {
             nonVisitedChartItems = chartItems.filter { !$0.visited }
             nonVisitedIndexes = nonVisitedChartItems.map { $0.id }
             
-//            let itemName = items[Int(aRandomInt)].value(forKeyPath: "name") as? String
-            let itemName = nonVisitedChartItems[Int(aRandomInt)].data
+            //            let itemName = items[Int(aRandomInt)].value(forKeyPath: "name") as? String
+            let itemName = nonVisitedChartItems[self.nonVisitedIndexes[Int(aRandomInt)]].data
             let synth = AVSpeechSynthesizer()
             let myUtterance = AVSpeechUtterance(string: itemName)
             myUtterance.rate = 0.5
             
-
             
-//            nonVisitedIndexes = chartItems.filter { item in !item.visited { $0.id }   }
             
-
-
+            //            nonVisitedIndexes = chartItems.filter { item in !item.visited { $0.id }   }
+            
+            
+            
             if isSpeakerEnabled {
                 synth.speak(myUtterance)
             } else {
@@ -211,3 +211,4 @@ extension ChartSpinnerViewController: ChartSpinnerPresenterView {
     }
     
 }
+
